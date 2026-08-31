@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>PyCon GR - On Astrophysics, Communities and Python</title>
+
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <!-- Theme: base skeleton first, then one theme file that overrides its variables -->
+  <link rel="stylesheet" href="css/base-theme.css">
+  <link rel="stylesheet" href="css/personal-theme.css">
+  <!-- Deck styles: palette, layout, components, utilities -->
+  <link rel="stylesheet" href="css/slides.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="reveal.js/dist/plugin/highlight/monokai.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section data-no-header data-transition="fade-in fade-out" data-background-image="img/background_cover.svg">
+  <div id="left70">
+    <h3>On Astrophysics, Communities and Python</h3>
+    <hr class="yellow-line"/>
+  <p class="x80">
+  <i class="python-yellow" style="font-size: 3rem;">Cristián</i><br>
+    maureira.dev<br/><br/>
+    @cmaureir<br/>
+    <img class="clean-img" src="img/bluesky.png">
+    <img class="clean-img" src="img/mastodon.png">
+    <img class="clean-img" src="img/github_white.png">
+    <img class="clean-img" src="img/linkedin.png">
+  </p>
+  </div>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
+  <h1 class="r-fit-text">Python is <i class="qt-neon">great</i></h1>
+</section>
+
+<section data-transition="fade-in fade-out">
+  <h3>Python extension with C (1/4)</h3>
+  <pre style="font-size: 60%;width: 90%;"><code class="c" data-trim data-noescape>
+    static PyObject* hello(PyObject* self, PyObject* args) {
+        char *msg = "Hello EuroPython 2025!";
+        return Py_BuildValue("s", msg);
+    }
+
+    static PyMethodDef functions[] = {
+        {"hello", (PyCFunction)hello, METH_NOARGS, NULL},
+        {NULL, NULL, 0, NULL}
+    };
+  </code></pre>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
+  <h1>..the more we can<br>shape <i class="qt-lemon">the future</i> of Python.</h1>
+</section>
+    </i>
+
+<section data-transition="fade-in fade-out" data-background-image="img/background_backcover.svg">
+  <div id="left">
+    <h4>On Astrophysics, Communities and Python</h4>
+    <p class="x80">
+    Dr. <i class="qt-lemon">Cristián</i> Maureira-Fredes<br>
+    <hr class="yellow-line"/>
+    <span>@cmaureir</span><br/>
+    <img class="clean-img" src="img/bluesky.png">
+    <img class="clean-img" src="img/mastodon.png">
+    <img class="clean-img" src="img/github_white.png">
+    <img class="clean-img" src="img/linkedin.png">
+    <hr class="yellow-line"/>
+    <a href="https://maureira.dev/ep2025">github.com/cmaureir/pycongr2026_keynote</a>
+    </p>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+  <!-- Header/footer content copied into the deck by js/deck.js -->
+  <div id="hidden" style="display: none;">
+    <div id="header">
+      <div id="header-left" style="margin-top: 20px; margin-left: 20px; font-size: 12pt;">
+        <img style="width: 100px;" src="img/pycongr.svg" />
+      </div>
+      <div id="header-right"></div>
+      <div id="footer-left">
+        <p style="font-size: 16pt; margin-left: 20px;">
+          <i class="python-yellow">PyCon GR 2026 | </i>
+          <b>@cmaureir</b>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+  <script src="reveal.js/dist/plugin/notes.js"></script>
+  <script src="reveal.js/dist/plugin/markdown.js"></script>
+  <script src="reveal.js/dist/plugin/highlight.js"></script>
+  <script src="js/deck.js"></script>
+</body>
+</html>

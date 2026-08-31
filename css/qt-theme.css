@@ -1,0 +1,14 @@
+/**
+ * Qt theme — Titillium Web on dark grey.
+ *
+ * Overrides only. Load base-theme.css before this file; everything not set
+ * here falls through to the base defaults.
+ */
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+:root {
+  --r-background-color: #2a2a2a;
+  --r-main-font: "Titillium Web", Helvetica, sans-serif;
+  --r-heading-font: "Titillium Web", Helvetica, sans-serif;
+  --r-bold-font-weight: bold;
+}
