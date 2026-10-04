@@ -26,16 +26,19 @@
   --qt-midnight: #27138B;
   --qt-mandarin: #FFA615;
   --qt-burgundy: #5F002D;
+  --kde-blue: #78b6e0;
   --python-blue: #4B8BBE;
   --python-dark-blue: #306998;
   --python-yellow: #ffd43B;
   --python-light-yellow: #ffe873;
   --python-gray: #646464;
-  /*--rust-red: #ef4a00;*/
+  --cpp-blue: #3f81b5;
   --rust-red: #a72145;
   --zig-yellow: #ef9f1c;
   --zig-black: #111111;
   --carbon-gray: #353535;
+  --csharp-purple: #5943a8;
+  --csharp-light-purple: #a08ce8;
 }
 
 /*********************************************
@@ -140,179 +143,326 @@
 
 /*********************************************
  * 4. COLUMN LAYOUT
- * Slide division: pair a #left* with the matching #right*.
+ *
+ * Wrap the columns in a .columns and give each column its own
+ * element. Both columns read left-aligned; the split lives on the
+ * wrapper, so there is nothing to keep in sync between the two.
+ *
+ *   <div class="columns">          50 / 50
+ *     <div>left</div>
+ *     <div>right</div>
+ *   </div>
+ *
+ *   <div class="columns c70-30">   uneven, see ratios below
+ *
+ * Columns are vertically centred against each other by default; use the
+ * v-start / v-end modifiers below to change that.
+ * Modifiers stack: class="columns c30-70 v-start".
+ * A single child works too: it fills the first track only, which is
+ * the "text on the left N%, artwork on the right" cover layout.
  *********************************************/
-#left {
-  left:-8.33%;
+.reveal .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.5em;
+  align-items: center;
   text-align: left;
-  float: left;
-  width:50%;
-  z-index:-10;
 }
 
-#right {
-  left:31.25%;
-  top: 75px;
-  float: right;
-  text-align: right;
-  z-index:-10;
-  width:50%;
+/* min-width:0 stops a wide <pre> from blowing out its track;
+ * grid items default to min-width:auto and would overflow. */
+.reveal .columns > * {
+  min-width: 0;
 }
 
-#rightl {
-  left:31.25%;
-  top: 75px;
-  float: right;
-  text-align: left;
-  z-index:-10;
-  width:50%;
+.reveal .columns img {
+  max-width: 100%;
 }
 
-#left60 {
-  left:-8.33%;
-  text-align: left;
-  float: left;
-  width:56%;
-  z-index:-10;
-  margin-left: 2%;
-  margin-right: 2%;
+/* Trim the outer margins so columns start and end flush — both on one
+ * baseline, and no stray trailing space to throw off v-center. */
+.reveal .columns > * > :first-child {
+  margin-top: 0;
 }
 
-#left70 {
-  left:-8.33%;
-  text-align: left;
-  float: left;
-  width:66%;
-  z-index:-10;
-  margin-left: 2%;
-  margin-right: 2%;
+.reveal .columns > * > :last-child {
+  margin-bottom: 0;
 }
 
-#right70 {
-  left:-8.33%;
-  text-align: right;
-  float: right;
-  width:66%;
-  z-index:-10;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-#right70l {
-  left:-8.33%;
-  text-align: left;
-  float: right;
-  width:66%;
-  z-index:-10;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-#left30 {
-  left:31.25%;
-  top: 75px;
-  float: left;
-  text-align: left;
-  z-index:-10;
-  width:26%;
-  margin-left: 2%;
-  margin-right: 2%;
+/* Code in a column. base-theme.css centres a <pre> at 90% width with an auto
+ * margin and caps the code at 400px tall — in a column we want the full track
+ * width, a flush left edge, and no inner scrollbar on a long snippet. */
+.reveal .columns pre {
+  width: 100%;
+  margin: 0 0 var(--r-block-margin) 0;
 }
 
-#right40 {
-  left:41.25%;
-  top: 75px;
-  float: right;
-  text-align: right;
-  z-index:-10;
-  width:36%;
-  margin-left: 2%;
-  margin-right: 2%;
+.reveal .columns pre code {
+  max-height: none;
 }
 
-#right30 {
-  left:31.25%;
-  top: 75px;
-  float: right;
-  text-align: right;
-  z-index:-10;
-  width:26%;
-  margin-left: 2%;
-  margin-right: 2%;
+/* Ratios. c50-50 is the default, spelled out for when you want it explicit. */
+.reveal .columns.c50-50 { grid-template-columns: 1fr 1fr; }
+.reveal .columns.c30-70 { grid-template-columns: 3fr 7fr; }
+.reveal .columns.c40-60 { grid-template-columns: 4fr 6fr; }
+.reveal .columns.c60-40 { grid-template-columns: 6fr 4fr; }
+.reveal .columns.c70-30 { grid-template-columns: 7fr 3fr; }
+
+/* Three and four even columns. */
+.reveal .columns.c3 { grid-template-columns: repeat(3, 1fr); }
+.reveal .columns.c4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Vertical alignment of the columns against each other (centre by default,
+ * see .columns above). On the wrapper it
+ * moves every column; on one column it moves only that one, which is what
+ * you want for an image sitting beside a taller text block. */
+.reveal .columns.v-start  { align-items: start; }
+.reveal .columns.v-center { align-items: center; }
+.reveal .columns.v-end    { align-items: end; }
+
+.reveal .columns > .v-start  { align-self: start; }
+.reveal .columns > .v-center { align-self: center; }
+.reveal .columns > .v-end    { align-self: end; }
+
+/* An image spanning the whole slide height, for a hero/section column.
+ *
+ *   <div><img class="full-height" src="…" /></div>
+ *
+ * `--slide-height` is set by reveal from the `height` in deck.js, so this
+ * follows the deck size rather than hardcoding it. `cover` is what actually
+ * guarantees full height: the image crops to fill the column instead of
+ * letterboxing, which is what `contain` would do whenever the column is
+ * narrower than the image's aspect ratio. The neighbour column is centred
+ * by default; a v-start on it would leave its text flush against the top
+ * edge of the slide. */
+.reveal .columns .full-height {
+  height: var(--slide-height, 720px);
+  width: 100%;
+  /* out-clamp `.reveal img { max-width/height: 95% }` in base-theme.css */
+  max-height: none;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+}
+
+/* Pair with .full-height to show the whole image, uncropped, when the column
+ * is wide enough for it. */
+.reveal .columns .fit-contain {
+  object-fit: contain;
+}
+
+/*
+ * Edge-to-edge side panel, for artwork that should bleed off the slide.
+ * Independent of .columns — it is taken out of flow and pinned to the slide
+ * edge, so no row height or gap constrains it:
+ *
+ *   <section class="full-slide" data-no-header>
+ *     <div class="columns c60-40">
+ *       <div>…text…</div>
+ *     </div>
+ *     <img class="side-image" src="…" />
+ *   </section>
+ *
+ * .full-slide is what makes it work. Sections are absolutely positioned with
+ * auto height, so without it `height: 100%` on the panel would resolve
+ * against the text, and reveal's vertical centering would drag the panel off
+ * the bottom of the slide. Once the section is already slide-height, that
+ * centering resolves to top: 0 and the two agree.
+ */
+.reveal .slides section.full-slide {
+  height: var(--slide-height, 720px);
+}
+
+.reveal .slides section.full-slide > .columns {
+  height: 100%;
+}
+
+/* The panel is a backdrop: everything else on the slide paints on top of it,
+ * so text and images may overlap it freely. Without this the panel would win
+ * regardless of order, since positioned elements paint above in-flow ones. */
+.reveal .slides section.full-slide > * {
+  position: relative;
+  z-index: 1;
+}
+
+.reveal .slides section.full-slide > .side-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 40%;
+  z-index: 0;
+  /* out-clamp `.reveal img { max-width/height: 95% }` in base-theme.css */
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+}
+
+/* Panel width. Pair with the matching .columns ratio so the text column stops
+ * where the panel starts — .side-image.w-40 goes with .columns.c60-40. */
+.reveal .slides section.full-slide > .side-image.w-30 { width: 30%; }
+.reveal .slides section.full-slide > .side-image.w-40 { width: 40%; }
+.reveal .slides section.full-slide > .side-image.w-50 { width: 50%; }
+
+/* Anchor the panel to the left edge instead. */
+.reveal .slides section.full-slide > .side-image.on-left {
+  right: auto;
+  left: 0;
+}
+
+/* Per-column text alignment, for the rare case you want it. */
+.reveal .ta-left   { text-align: left; }
+.reveal .ta-center { text-align: center; }
+.reveal .ta-right  { text-align: right; }
+
+/*
+ * Image grid that always fits the slide, however many rows it has:
+ *
+ *   <section>
+ *     <h3>Title</h3>
+ *     <div class="image-grid r-stretch">     3 per row by default
+ *       <img src="…" />
+ *       <img class="fragment" src="…" />
+ *       …
+ *     </div>
+ *   </section>
+ *
+ * r-stretch is what makes it fit: reveal sets the grid's height to whatever
+ * the heading leaves free (it must be a direct child of the <section>), and
+ * redoes it on every resize. The rows then split that height evenly and each
+ * image shrinks to its cell, keeping its aspect ratio — so no fixed
+ * `width: 400px` on the images; that would bring the overflow right back.
+ * Wrapping each image in a <div> works too.
+ */
+.reveal .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 0.5em 1em;
+}
+
+.reveal .image-grid.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.reveal .image-grid.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.reveal .image-grid > * {
+  min-width: 0;
+  min-height: 0;
+}
+
+.reveal .image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* out-clamp `.reveal img { max-width/height: 95%; margin }` in base-theme.css */
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  display: block;
 }
 /*********************************************
  * 5. UTILITIES
  *********************************************/
-.gray {
-  color: #646464;
-  font-style: normal;
-}
-
-.blue {
-  color: #0077c8;
-  font-style: normal;
-}
-
-.white {
-  color: var(--qt-white);
-  font-style: normal;
-}
-
-.red {
-  color: #ff6961;
-  font-style: normal;
-}
-
-.qt-neon {
-  color: var(--qt-neon);
-  font-style: normal;
-}
-
-.python-yellow {
-  color: var(--python-yellow);
-  font-style: normal;
-}
-
-.python-blue {
-  color: var(--python-blue);
-  font-style: normal;
-}
-
-.python-gray {
+/* Text colours.
+ *
+ * The .reveal prefix is not decoration: base-theme.css sets `color` on
+ * `.reveal h1..h6` at a higher specificity than a bare class, so without it
+ * these would silently do nothing on a heading and only work on inline
+ * elements like <i> and <span>. */
+.reveal .gray {
   color: var(--python-gray);
   font-style: normal;
 }
 
-.qt-pine {
+.reveal .blue {
+  color: #0077c8;
+  font-style: normal;
+}
+
+.reveal .white {
+  color: var(--white);
+  font-style: normal;
+}
+
+.reveal .red {
+  color: #ff6961;
+  font-style: normal;
+}
+
+.reveal .qt-neon {
+  color: var(--qt-neon);
+  font-style: normal;
+}
+
+.reveal .python-yellow {
+  color: var(--python-yellow);
+  font-style: normal;
+}
+
+.reveal .python-blue {
+  color: var(--python-blue);
+  font-style: normal;
+}
+
+.reveal .python-gray {
+  color: var(--python-gray);
+  font-style: normal;
+}
+
+.reveal .qt-pine {
   color: var(--qt-pine);
   font-style: normal;
 }
 
-.qt-violet {
+.reveal .qt-violet {
   color: var(--qt-violet);
   font-style: normal;
 }
 
-.qt-lemon {
+.reveal .qt-lemon {
   color: var(--qt-lemon);
   font-style: normal;
 }
 
-.qt-moss {
+.reveal .qt-moss {
   color: var(--qt-moss);
   font-style: normal;
 }
 
-.qt-midnight {
+.reveal .qt-midnight {
   color: var(--qt-midnight);
   font-style: normal;
 }
 
-.qt-mandarin {
+.reveal .qt-mandarin {
   color: var(--qt-mandarin);
   font-style: normal;
 }
 
-.qt-burgundy {
+.reveal .qt-burgundy {
   color: var(--qt-burgundy);
+  font-style: normal;
+}
+
+.reveal .rust-red {
+  color: var(--rust-red);
+  font-style: normal;
+}
+
+.reveal .kde-blue {
+  color: var(--kde-blue);
+  font-style: normal;
+}
+
+.reveal .cpp-blue {
+  color: var(--cpp-blue);
+  font-style: normal;
+}
+
+.reveal .csharp-light-purple {
+  color: var(--csharp-light-purple);
   font-style: normal;
 }
 
@@ -344,8 +494,8 @@ a {
 
 .qt-line {
   width: 70px;
-  border: 1px solid var(--qt-lemon);
-  background-color: var(--qt-lemon);
+  border: 1px solid var(--qt-neon);
+  background-color: var(--qt-neon);
   margin-left: 0px;
 }
 
@@ -356,16 +506,67 @@ a {
   margin-left: 0px;
 }
 
+.x20 {
+  font-size: 20%;
+}
+
 .x40 {
   font-size: 40%;
+}
+
+.x50 {
+  font-size: 50%;
 }
 
 .x60 {
   font-size: 60%;
 }
 
+.x70 {
+  font-size: 70%;
+}
+
 .x80 {
   font-size: 80%;
+}
+
+
+.w30 {
+  width: 30%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+/* The same sizes on a <pre>. base-theme.css sets `.reveal pre { font-size:
+ * 0.55em }` at a higher specificity than a bare class, so a <pre class="x40">
+ * would otherwise be ignored. */
+.reveal pre.x40 { font-size: 40%; }
+.reveal pre.x50 { font-size: 50%; }
+.reveal pre.x60 { font-size: 60%; }
+.reveal pre.x80 { font-size: 80%; }
+
+/* Font weights. The .reveal prefix is required to outrank the
+ * `.reveal h1..h6 { font-weight: ... }` rule in base-theme.css. */
+.reveal .w300 {
+  font-weight: 300;
+}
+
+.reveal .w400 {
+  font-weight: 400;
+}
+
+.reveal .w600 {
+  font-weight: 600;
+}
+
+.reveal .w700 {
+  font-weight: 700;
 }
 
 ul>li {
@@ -405,6 +606,12 @@ ul>li {
 .slide-gray {
   background: var(--carbon-gray) !important;
   background-color: var(--carbon-gray);
+  color: var(--white) !important;
+}
+
+.slide-purple {
+  background: var(--csharp-purple) !important;
+  background-color: var(--csharp-purple);
   color: var(--white) !important;
 }
 

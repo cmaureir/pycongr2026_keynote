@@ -48,7 +48,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal {
   font-family: var(--r-main-font);
   font-size: var(--r-main-font-size);
-  font-weight: normal;
+  font-weight: thin;
   color: var(--r-main-color);
 }
 
