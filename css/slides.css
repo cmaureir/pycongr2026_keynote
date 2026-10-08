@@ -134,6 +134,21 @@
   background: #f00;
 }
 
+/* Language logo as a label above a code column, for side-by-side comparisons:
+ *
+ *   <div class="columns v-start">
+ *     <div><img class="code-logo" src="img/c_logo.svg" /><pre>…</pre></div>
+ *     <div><img class="code-logo" src="img/python-logo-only.svg" /><pre>…</pre></div>
+ *   </div>
+ *
+ * Sized by height so logos of any aspect ratio line up on one baseline. */
+.reveal .code-logo {
+  height: 1.6em;
+  width: auto;
+  margin: 0 0 0.3em 0;
+  display: block;
+}
+
 /* Slides marked with data-no-header hide the corner header/footer chrome */
 .reveal.hide-header #header-left,
 .reveal.hide-header #header-right,
@@ -284,6 +299,23 @@
 .reveal .slides section.full-slide > * {
   position: relative;
   z-index: 1;
+}
+
+/* Pin an element to the bottom edge of the slide, e.g. an image credit:
+ *
+ *   <section class="full-slide" data-background-image="…">
+ *     <p class="at-bottom x40">Attribution: …</p>
+ *   </section>
+ *
+ * Needs .full-slide for the same reason the side panel does: without it the
+ * section is only as tall as its content, so "bottom" would mean the bottom of
+ * that content rather than of the slide. */
+.reveal .slides section.full-slide > .at-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
 }
 
 .reveal .slides section.full-slide > .side-image {
