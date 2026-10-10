@@ -43,11 +43,11 @@
 <section data-transition="fade-in fade-out">
   <h3 class="r-fit-text">Hello everyone 👋</h3>
   <h3 class="r-fit-text fragment">during this talk <i class="red">I will lie to you</i></h3>
-  <h3 class="r-fit-text fragment"><i class="qt-lemon">(...at least a couple of times)</i></h3>
+  <h3 class="r-fit-text fragment"><i class="python-yellow">(...at least a couple of times)</i></h3>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3 class="r-fit-text">...but my objective is to <i class="qt-lemon">/hopefully/</i></h3>
+  <h3 class="r-fit-text">...but my objective is to <i class="python-yellow">/hopefully/</i></h3>
   <h3 class="r-fit-text">give you <i class="qt-neon">new</i> information</h3>
   <h3 class="r-fit-text fragment">for <i class="qt-mandarin">your own benefit</i></h3>
 </section>
@@ -74,12 +74,12 @@
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3><i class="qt-lemon">Let's start with a motivational quote:</i></h3>
+  <h3><i class="python-yellow">Let's start with a motivational quote:</i></h3>
   <h1 class="fragment">"You will never be able to do that"</h1>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3 class="r-fit-text">Changing <i class="qt-lemon">your</i> life direction</h3>
+  <h3 class="r-fit-text">Changing <i class="python-yellow">your</i> life direction</h3>
   <h3 class="r-fit-text">only needs a <i class="qt-mandarin">spark of curiosity</i></h3>
 </section>
 
@@ -100,7 +100,7 @@
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3>Quantum Mechanics <i class="qt-lemon">(in reality)</i></h3>
+  <h3>Quantum Mechanics <i class="python-yellow">(in reality)</i></h3>
   <div class="columns c50-50">
   <img class="w80" src="img/quantum_books.jpg" />
   <img class="fragment" src="img/tunneling.svg" />
@@ -134,17 +134,23 @@
 <section data-transition="fade-in fade-out">
   <h3>and guess what?</h3>
   <h2 class="r-fit-text fragment">🔥You can simulate them:🔥</h2>
-  <h3 class="fragment r-fit-text">The <i class="qt-lemon">N-body</i> problem</h3>
+  <h3 class="fragment r-fit-text">The <i class="python-yellow">N-body</i> problem</h3>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3>This is amazing!!!!</h3>
-  <video style="width: 80%;" autoplay muted src="videos/mindblown.mp4" />
+    (Simulation)
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3>Where is this going?</h3>
-  <img src="img/confused_dog.gif"/>
+  <div class="columns c50-50">
+  <div style="text-align: center">
+    <h4><i class="python-yellow">This is amazing!!!!</i></h4>
+    <video autoplay muted loop src="videos/mindblown.mp4"></video>
+  </div>
+  <div style="text-align: center">
+    <img src="img/confused_dog.gif"/>
+    <h4>Where is this going?</h4>
+  </div>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-color="rgb(255,153,28)">
@@ -263,15 +269,16 @@
       <div><img class="fragment" style="width: 400px;" src="img/Orbit5.gif"/></div>
       <div><img class="fragment" style="width: 400px;" src="img/Orbit2.gif"/></div>
   </div>
+  <p class="x40">https://en.wikipedia.org/wiki/Two-body_problem - Public Domain Animations</p>
 </section>
 
 <section data-transition="fade-in fade-out">
   <h2>3-body problem (1/2)</h2>
-  <p class="x50 fragment">(Neither the book nor the TV show 🙄)</p>
+  <p class="x50 fragment"><i class="python-yellow">(Neither the book nor the TV show 🙄)</i></p>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-video="videos/chaos.mp4">
-  <h1 class="r-fit-text">⍧ℍ⍲⌾⎎</h1>
+  <h1>⍧ℍ⍲⌾⎎</h1>
 </section>
 
 <section data-transition="fade-in fade-out">
@@ -283,7 +290,7 @@
     <p class="x20">CC BY-SA 4.0 - Dnttllthmmnm (Wikipedia)</p>
     </div>
     <div class="fragment">
-      <video style="width: 80%;" autoplay muted src="videos/5_4_800_36_downscaled.mp4" />
+        <video style="width: 100%;" autoplay muted loop src="videos/5_4_800_36_downscaled.mp4"></video>
     <p class="x70">Periodic solutions</p>
     <p class="x20">CC BY-SA 4.0 - Perosello (Wikipedia)</p>
     </div>
@@ -305,8 +312,8 @@
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>$N-$body problem - binaries (1/2)</h2>
-  <p>Handling binaries is non-trivial, and without it the energy of the system <i class="red">is lost</i>.</p>
+  <h3>$N-$body problem - binaries (1/2)</h3>
+  <p>Handling binaries is non-trivial,<br>and without it the simulation <i class="red">is broken</i>.</p>
   <div class="x60">
 \[
 \ddot{\mathbf r}_i
@@ -339,11 +346,12 @@ m_j
 }
 \]
   </div>
-  <p class="fragment" data-fragment-index="1">Hot-fix: Softening  $\color{orange}{\epsilon}$ to the rescue!</p>
+  <p class="fragment" data-fragment-index="1"><u>Hot-fix</u>: Softening  $\color{orange}{\epsilon}$ to the rescue!</p>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>Can the simulation run <i class="qt-lemon">forever</i>?</h2>
+  <p>with this...</p>
+  <h2>Can the simulation run <i class="python-yellow">forever</i>?</h2>
 </section>
 
 <section data-transition="fade-in fade-out">
@@ -357,40 +365,40 @@ m_j
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3 class="r-fit-text"><i class="red">Not</i> properly <i class="qt-lemon">handling</i> this</h3>
+  <h3 class="r-fit-text"><i class="red">Not</i> properly <i class="python-yellow">handling</i> this</h3>
   <h3 class="r-fit-text">will create <i class="red">problems</i></h3>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3>The <i class="qt-lemon">energy</i> of the binaries is <i class="qt-lemon">crucial for the cluster</i></h3>
+  <h3>The <i class="python-yellow">energy</i> of the binaries is <i class="python-yellow">crucial for the cluster</i></h3>
   <h3 class="fragment">If it gets lost, <i class="red">the cluster is lost</i></h3>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <p><i class="qt-lemon">and remember!</i></p>
+  <p><i class="python-yellow">and remember!</i></p>
   <h1 class="fragment">Without energy conservation, nothing makes sense</h1>
   <p class="fragment"><i class="red">most of the time*</i></p>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2 class="r-fit-text">🫤 Where is this going?</h2>
-  <h3 class="r-fit-text fragment">This has <i class="qt-neon">everything</i> to do with Python</h3>
+  <h2 class="r-fit-text">uhm, again...🫤 Where is this going?</h2>
+  <h3 class="r-fit-text fragment">this has <i class="qt-neon">everything</i> to do with Python</h3>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>Let's replace <i class="qt-lemon">bodies</i> with <i class="qt-neon">people</i></h2>
+  <h2>Let's replace <i class="python-yellow">bodies</i> with <i class="qt-neon">people</i></h2>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-video="videos/walking.mp4">
   <h2>1-person problem</h2>
-  <p>(This topic is too dense and complex for this talk)</p>
+  <p>(this topic is too dense and complex for this talk)</p>
 </section>
 
 <section data-transition="fade-in fade-out">
   <h2>2-person problem</h2>
   <div class="columns c30-70">
     <img style="width: 400px;" src="img/Orbit1.gif"/>
-      <p><i class="qt-lemon">/Most/</i> relationships between two people are somewhat <i class="qt-neon">predictable</i> based on experience</p>
+      <p><i class="python-yellow">/Most/</i> relationships between two people are somewhat <i class="qt-neon">predictable</i> based on experience</p>
   </div>
 </section>
 
@@ -398,34 +406,31 @@ m_j
   <h2>3-person problem</h2>
   <div class="columns c30-70">
     <img src="img/Three-body_Problem_Animation_with_COM.gif" />
-    <ul>
-      <li class="fragment">Adding a <i class="qt-lemon">third person</i> will most likely <i class="red">change</i> the outcome of a two-person discussion</li>
-      <li class="fragment">In some cases we might know how things will work... but it's not common.</li>
-    </ul>
+    <p>Adding a <i class="python-yellow">third person</i> will most likely <i class="red">change</i> the outcome of a 2-person interaction, adding a bit of "chaos".</p>
   </div>
 </section>
 
 <section data-transition="fade-in fade-out">
   <h3>N-person problem</h3>
   <ul>
-    <li class="fragment">The evolution is not exact, and <i class="qt-lemon">we don't know</i> what it will look like in the future</li>
-    <li class="fragment"><i class="red">Heated binaries</i> can reduce the energy of the system until the system doesn't make sense anymore</li>
-    <li class="fragment">You can <i class="qt-lemon">ignore/soften</i> those interactions, but it's just a delay</li>
+    <li class="fragment">The evolution of this group of people is not analytically exact, and <i class="python-yellow">we don't know</i> what it will look like in the future</li>
+    <li class="fragment"><i class="red">Heated binaries/interactions</i> can reduce the energy of the system/group until the system/group doesn't make sense anymore</li>
+    <li class="fragment">You can <i class="python-yellow">ignore/soften</i> those interactions, but at some point they need to be addressed.</li>
   </ul>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>How do we <u>prevent</u> the <i class="red">collapse</i> of our cluster?</h2>
+  <h2>How do we <u>prevent</u> the <i class="red">collapse</i> of our cluster/community?</h2>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2><i class="qt-lemon">...and the tricky part</i></h2>
+  <h2><i class="python-yellow">...and even worse</i></h2>
   <h2>Clusters are embedded in Galaxies</h2>
 </section>
 
 <section data-transition="fade-in fade-out" data-auto-animate>
-  <h2 class="r-fit-text">Our dear Galaxy</h2>
-  <h2 class="r-fit-text">(The Python Community)</h2>
+  <h2 class="r-fit-text">Let's talk about our dear Galaxy</h2>
+  <h2 class="r-fit-text"><i class="python-yellow">(The Python Ecosystem)</i></h2>
 </section>
 
 <section data-transition="fade-in fade-out" data-auto-animate>
@@ -531,11 +536,12 @@ p(i((1/5**.5)*(((1+5**.5)/2)**(i(a[1])+1)-((1
 </section>
 
 <section data-transition="fade-in fade-out" data-auto-animate>
-  <h2>Python is <i class="qt-lemon">more</i> than a programming language</h2>
+    <p class="x80">but...</p>
+  <h2>Python is <i class="python-yellow">more</i> than a programming language</h2>
 </section>
 
 <section data-transition="fade-in fade-out" data-auto-animate>
-  <h2>and that's why I like it</h2>
+    <h2>and that's why <i class="qt-neon">I like it</i></h2>
 </section>
 
 <section data-auto-animate data-auto-animate="cubic-bezier(0.77, 0, 0.175, 1.0)">
@@ -553,48 +559,67 @@ p(i((1/5**.5)*(((1+5**.5)/2)**(i(a[1])+1)-((1
 </section>
 
 <section data-transition="fade-in fade-out">
-  The structure of our Galaxy can be complicated
+    What lies in <i class="python-yellow">the center</i> of the <strike>Ecosystems</strike> Galaxies?
 </section>
 
-
 <section data-transition="fade-in fade-out">
-  <h2>The Python Software Foundation (1/2)</h2>
-  <div class="columns c30-70">
-    <img style="width: 100%;" src="img/python-logo-only.svg" />
-    <ul class="x80">
-      <li class="fragment">US 501(c)(3) non-profit</li>
-      <li class="fragment">Promote, protect, and advance the language</li>
-      <li class="fragment">Licenses to ensure public and free distribution</li>
-      <li class="fragment">Hold intellectual property</li>
-      <li class="fragment">Infrastructure, staff, grants, fundraising, and more!</li>
-    </ul>
+  <div class="columns c50-50">
+    <div class="fragment" style="text-align: center">
+      <img class="w50" src="img/Astrofotografia.jpg" />
+      <p class="x40">Me close to San Pedro de Atacama</p>
+    </div>
+    <div>
+      <img class="w50" src="img/milkyway_vertical_ut4_pano-cc.jpg" />
+      <p class="x40">Milky Way from the Paranal Observatory - Juan Carlos Muñoz-Mateos/ESO</p>
+    </div>
   </div>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>The Python Software Foundation (2/2)</h2>
-  <div class="columns c30-70">
-    <img style="width: 100%;" src="img/no.svg" />
-    <ul class="x80">
-      <li class="fragment">Is not in charge of all the communities</li>
-      <li class="fragment">Doesn't mediate conflicts in communities</li>
-      <li class="fragment">Doesn't approve features for the language</li>
-      <li class="fragment">Doesn't vote on PEPs or core developers</li>
-    </ul>
-  </div>
+    <img src="img/EHT_Saggitarius_A_black_hole.tif.jpg"/>
+    <p class="x40">Sagittarius A* imaged by the Event Horizon Telescope in 2017, released in 2022<br>(European Southern Observatory - CC BY-SA 4.0)</p>
+</section>
+
+<section data-no-header class="full-slide" data-transition="fade-in fade-out" data-background-video="videos/SMBH_Sim_Thin72_4k.webm">
+  <h3>Black Hole Binaries</h3>
+  <p class="at-bottom x40">
+  NASA's Goddard Space Flight Center/Scott Noble; simulation data, d'Ascoli et al. 2018 - <a href="https://svs.gsfc.nasa.gov/13086">svs.gsfc.nasa.gov/13086</a>
+  </p>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>Python Ecosystem Institutions</h2>
+  <h2>The Python Binary System</h2>
   <div class="columns c50-50">
     <img class="fragment" src="img/diagram_psf.svg" />
     <img class="fragment" src="img/diagram_peg.svg" />
   </div>
-  <p class="fragment">(and many more!)</p>
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3>Why staying in our Galaxy? 🚀</h3>
+  <h3>The Python Software Foundation (PSF)</h3>
+  <div class="columns c50-50" style="margin-top: 10%;">
+    <ul class="x80 fragment">
+      <li>✅ US 501(c)(3) non-profit</li>
+      <li>✅ Promote, protect, and advance the language</li>
+      <li>✅ Licenses to ensure public and free distribution</li>
+      <li>✅ Hold intellectual property</li>
+      <li>✅ Infrastructure, staff, grants, fundraising, and more!</li>
+    </ul>
+    <ul class="x80 fragment">
+      <li>❌ Is not in charge of all the communities</li>
+      <li>❌ Doesn't mediate conflicts in communities</li>
+      <li>❌ Doesn't approve features for the language</li>
+      <li>❌ Doesn't vote on PEPs or core developers</li>
+    </ul>
+  </div>
+  <p class="x80 fragment"><a href="https://www.python.org/psf-landing/">python.org/psf-landing/</a></p>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/space_leaving.avif">
+  <h3 class="r-fit-text"><i class="python-yellow">Why staying in our Galaxy?</i></h3>
+  <p class="at-bottom x40">
+     NASA's Juno planetary probe - NASA/Scott Andrews 
+  </p>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-video="videos/galaxy_merger.webm">
@@ -603,7 +628,7 @@ p(i((1/5**.5)*(((1+5**.5)/2)**(i(a[1])+1)-((1
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>We have been <i class="qt-neon">interacting</i> with many <i class="qt-lemon"><strike>galaxies</strike></i> communities</h2>
+  <h2>We have been <i class="qt-neon">interacting</i> with many <i class="python-yellow"><strike>galaxies</strike></i> ecosystems</h2>
 </section>
 
 <section data-transition="fade-in fade-out">
@@ -638,6 +663,50 @@ for n in numbers:
     total += n
 
 print(f"Total: {total}")
+      </code></pre>
+    </div>
+  </div>
+</section>
+
+<section data-transition="fade-in fade-out">
+  <h3>C++ keeps getting our inspiration</h3>
+  <div class="columns c50-50 v-start">
+    <div>
+      <img class="code-logo" src="img/cpp_logo.svg" />
+      <pre class="x40"><code class="cpp" data-trim>
+#include &lt;print&gt;
+#include &lt;map&gt;
+#include &lt;ranges&gt;
+
+int main() {
+    std::map&lt;std::string, int&gt; ages{
+        {"Guido", 70}, {"Bjarne", 75}};
+
+    for (auto&amp; [name, age] : ages)
+        std::println("{} is {}", name, age);
+
+    auto squares = std::views::iota(1, 6)
+        | std::views::transform([](int x) {
+           return x * x;
+          });
+
+    std::print("{}", squares);
+}
+      </code></pre>
+        <p class="x40">(<i class="python-yellow">std::print</i> after only 50 years... yay)</p>
+
+    </div>
+    <div class="fragment">
+      <img class="code-logo" src="img/python-logo-only.svg" />
+      <pre class="x50"><code class="python" data-trim>
+ages = {"Guido": 70, "Bjarne": 75}
+
+for name, age in ages.items():
+    print(f"{name} is {age}")
+
+squares = [x * x for x in range(1, 6)]
+
+print(squares)
       </code></pre>
     </div>
   </div>
@@ -744,7 +813,7 @@ impl Point {
 
 fn main() {
     let p = Point { x: 3.0, y: 4.0 };
-    let names = vec!["Ada", "Guido"];
+    let names = vec!["Maria", "José"];
 
     for name in &amp;names {
         println!("Hello, {name}!");
@@ -769,7 +838,7 @@ class Point:
 
 
 p = Point(3.0, 4.0)
-names = ["Ada", "Guido"]
+names = ["Maria", "José"]
 
 for name in names:
     print(f"Hello, {name}!")
@@ -781,22 +850,54 @@ print(f"norm = {p.norm()}")
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>Where is Rust?</h2>
-  <div class="columns c50-50 x70">
-    <ul>
-      <li><b>Linux kernel</b>: drivers, since 6.1</li>
-      <li class="fragment"><b>Windows</b>: parts of the kernel and DirectWrite</li>
-      <li class="fragment"><b>Android</b>: new native platform code</li>
-      <li class="fragment"><b>Firefox</b>: CSS engine (Stylo)</li>
-      <li class="fragment"><b>Chromium</b>: fonts and third-party libraries</li>
-    </ul>
-    <ul>
-      <li class="fragment"><b>Ubuntu</b>: <code>sudo-rs</code> and coreutils</li>
-      <li class="fragment"><b>Git</b>: required starting with 3.0</li>
-      <li class="fragment"><b>AWS</b>: Firecracker (Lambda, Fargate)</li>
-      <li class="fragment"><b>Cloudflare</b>: Pingora proxy</li>
-      <li class="fragment"><b>Discord</b>: backend services</li>
-    </ul>
+  <h2>Where is Rust? (1/2)</h2>
+  <div class="logo-cards r-stretch">
+    <figure>
+      <img src="img/rust_tux.svg" />
+      <figcaption><b>Linux kernel</b>drivers, since 6.1</figcaption>
+    </figure>
+    <figure class="fragment">
+      <img src="img/rust_windows.svg" />
+      <figcaption><b>Windows</b>parts of the kernel and DirectWrite</figcaption>
+    </figure>
+    <figure class="fragment">
+      <img src="img/rust_android.svg" />
+      <figcaption><b>Android</b>new native platform code</figcaption>
+    </figure>
+    <figure class="fragment">
+      <img src="img/rust_firefox.svg" />
+      <figcaption><b>Firefox</b>CSS engine (Stylo)</figcaption>
+    </figure>
+    <figure class="fragment">
+      <img src="img/rust_chromium.svg" />
+      <figcaption><b>Chromium</b>fonts and third-party libraries</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section data-transition="fade-in fade-out">
+  <h2>Where is Rust? (2/2)</h2>
+  <div class="logo-cards r-stretch">
+    <figure>
+      <img src="img/rust_gnu.svg" />
+      <figcaption><b>GNU Tools rewrites</b><code>rg, fd, ...</code> in coreutils</figcaption>
+    </figure>
+    <figure class="fragment">
+      <img src="img/rust_git.svg" />
+      <figcaption><b>Git</b>required starting with 3.0</figcaption>
+    </figure>
+    <figure class="fragment">
+      <img src="img/rust_aws.svg" />
+      <figcaption><b>AWS</b>Firecracker (Lambda, Fargate)</figcaption>
+    </figure>
+    <figure class="fragment">
+      <img src="img/rust_cloudflare.svg" />
+      <figcaption><b>Cloudflare</b>Pingora proxy</figcaption>
+    </figure>
+    <figure class="fragment">
+      <img src="img/rust_discord.svg" />
+      <figcaption><b>Discord</b>backend services</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -860,61 +961,123 @@ $ maturin develop
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h2>What can you do?</h2>
-  <p>(If you want, no pressure!)</p>
+    <h3>and Python is also shaping Rust</h3>
+    <ul class="x80">
+        <li><a href="https://crates.io/crates/rpds">crates.io/crates/rpds</a> - 4.4M (90 days) - <i class="python-yellow">19.5M downloads</i></li>
+        <li class="fragment">jsonschema → rpds-py - ...</li>
+    </ul>
+    <h3>
+        <span class="fragment"><i class="red">470M (30 days) 😵</i></span>
+    </h3>
 </section>
 
 <section data-transition="fade-in fade-out">
-Learn the forbidden topics
-<ul>
-  <li class="fragment">Create silly modules</li>
-  <li class="fragment">Solve mundane problems</li>
-  <li class="fragment">Do strange languages interactions</li>
-  <li class="fragment">Bring ideas from one language to another</li>
-  <li class="fragment">Modify the interpreter and give a give talks!</li>
+    <h3>Established relationship</h3>
+    <div class="columns c50-50">
+        <div>
+        <a href="https://www.youtube.com/watch?v=z5_tEecNkRs">
+          <img class="w80"
+            src="https://img.youtube.com/vi/z5_tEecNkRs/hqdefault.jpg"
+            alt="Watch the video on YouTube"
+            loading="lazy">
+        </a>
+        <p class="x60">Rebecca Rumbul &amp; Deb Nicholson: "Fireside Chat - Stewarding Rust & Python" | RustConf 2026 </p>
+        </div>
+        <div class="fragment">
+            <img src="img/rust-for-cpython.png" />
+            <p class="x60">Rust for CPython initiative<br>
+            <a href="https://github.com/Rust-for-CPython">github.com/Rust-for-CPython</a>
+            </p>
+        </div>
+</section>
+
+<section data-transition="fade-in fade-out">
+    <h1>What can <i class="qt-neon">you</i> do?</h1>
+    <p><i class="python-yellow">(If you want, no pressure!)</i></p>
+</section>
+
+<section data-transition="fade-in fade-out">
+<div class="scale-track">
+  <span class="step active">⭐<small>you</small></span>
+  <span class="step">✨<small>cluster</small></span>
+  <span class="step">🌌<small>galaxy</small></span>
+  <span class="step">💫<small>interactions</small></span>
+</div>
+<h3>Learn the forbidden topics</h3>
+<ul class="action-list">
+  <li class="fragment"><span class="emoji">🧪</span> Create silly modules</li>
+  <li class="fragment"><span class="emoji">🔧</span> Solve mundane problems</li>
+  <li class="fragment"><span class="emoji">🔀</span> Do strange languages interactions</li>
+  <li class="fragment"><span class="emoji">💡</span> Bring ideas from one language to another</li>
+  <li class="fragment"><span class="emoji">🎤</span> Modify the interpreter and give talks!</li>
 </ul>
 </section>
 
 <section data-transition="fade-in fade-out">
-  Help your local <strike>community</strike> N-person system
-<ul class="x80">
-  <li>Show up to meetups, and bring a friend</li>
-  <li class="fragment">Give a lightning talk: 5 minutes is enough for a first one</li>
-  <li class="fragment">Host a meetup at your company or university</li>
-  <li class="fragment">Volunteer: registration, social media, website</li>
-  <li class="fragment">Run a beginners' workshop or a sprint</li>
-  <li class="fragment">Create content in your own language</li>
+<div class="scale-track">
+  <span class="step">⭐<small>you</small></span>
+  <span class="step active">✨<small>cluster</small></span>
+  <span class="step">🌌<small>galaxy</small></span>
+  <span class="step">💫<small>interactions</small></span>
+</div>
+<h3>Help your local <strike>community</strike> N-person system</h3>
+<ul class="action-list x80">
+  <li><span class="emoji">👥</span> Show up to meetups, and bring a friend</li>
+  <li class="fragment"><span class="emoji">⚡</span> Give a lightning talk: 5 minutes is enough for a first one</li>
+  <li class="fragment"><span class="emoji">🏢</span> Host a meetup at your company or university</li>
+  <li class="fragment"><span class="emoji">🙌</span> Volunteer: registration, social media, website</li>
+  <li class="fragment"><span class="emoji">🏃</span> Run a beginners' workshop or a sprint</li>
+  <li class="fragment"><span class="emoji">🌍</span> Create content in your own language: <i class="python-yellow">Καλή ιδέα!</i></li>
 </ul>
 </section>
 
 <section data-transition="fade-in fade-out">
-  Help the <strike>Python Community</strike> Galaxy
-<ul class="x80">
-  <li>Contribute to open source: docs, triage, reviews, not only code</li>
-  <li class="fragment">Translate the Python documentation</li>
-  <li class="fragment">Become a PSF member and vote</li>
-  <li class="fragment">Volunteer at PyCons and EuroPython</li>
-  <li class="fragment">Support PyLadies, Python Pizza, Django Girls, ...</li>
-  <li class="fragment">Sponsor projects, or convince your employer to</li>
+<div class="scale-track">
+  <span class="step">⭐<small>you</small></span>
+  <span class="step">✨<small>cluster</small></span>
+  <span class="step active">🌌<small>galaxy</small></span>
+  <span class="step">💫<small>interactions</small></span>
+</div>
+<h3>Help the <strike>Python Ecosystem</strike> Galaxy</h3>
+<ul class="action-list x80">
+  <li><span class="emoji">🛠️</span> Contribute to open source: docs, triage, reviews, not only code</li>
+  <li class="fragment"><span class="emoji">📖</span> Translate the Python documentation</li>
+  <li class="fragment"><span class="emoji">🗳️</span> Become a PSF member and vote</li>
+  <li class="fragment"><span class="emoji">🎪</span> Volunteer at PyCons and EuroPython</li>
+  <li class="fragment"><span class="emoji">💜</span> Support PyLadies, Python Pizza, Django Girls, ...</li>
+  <li class="fragment"><span class="emoji">💶</span> Sponsor projects, or convince your employer to</li>
 </ul>
 </section>
 
 <section data-transition="fade-in fade-out">
-  Encourage <strike>community</strike> galaxy interactions
-<ul class="x80">
-  <li>Go to another language's meetup or conference</li>
-  <li class="fragment">Co-organize joint meetups: "Python + Rust night"</li>
-  <li class="fragment">Attend multi-language events: FOSDEM, local tech weeks</li>
-  <li class="fragment">Contribute to bindings: PyO3, pybind11, PySide, juliacall</li>
-  <li class="fragment">Join umbrella organizations: NumFOCUS, OSI, local FOSS groups</li>
-  <li class="fragment">Invite speakers from other communities to your events</li>
+<div class="scale-track">
+  <span class="step">⭐<small>you</small></span>
+  <span class="step">✨<small>cluster</small></span>
+  <span class="step">🌌<small>galaxy</small></span>
+  <span class="step active">💫<small>interactions</small></span>
+</div>
+<h3>Encourage <strike>ecosystem</strike> galaxy interactions</h3>
+<ul class="action-list x80">
+  <li><span class="emoji">🚪</span> Go to another language's meetup or conference</li>
+  <li class="fragment"><span class="emoji">🤝</span> Co-organize joint meetups: "Python + Rust night"</li>
+  <li class="fragment"><span class="emoji">🌐</span> Attend multi-language events: FOSDEM, local tech weeks</li>
+  <li class="fragment"><span class="emoji">🔗</span> Contribute to bindings: PyO3, pybind11, PySide, juliacall</li>
+  <li class="fragment"><span class="emoji">☂️</span> Join umbrella organizations: NumFOCUS, OSI, local FOSS groups</li>
+  <li class="fragment"><span class="emoji">📨</span> Invite speakers from other communities to your events</li>
 </ul>
 </section>
 
-
+<section data-transition="fade-in fade-out">
+  <h3>...and many other ideas <i class="python-yellow">you might have</i>!</h3>
+  <p class="fragment"><i class="red">...but now</i></p>
+</section>
 
 <section data-transition="fade-in fade-out" data-background-color="rgb(28,3,51)">
-  <h3>💀First Lie: <i class="red">Post-Newtonian corrections</i> (1/2)</h3>
+    <h1>💀 The Lies</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-color="rgb(28,3,51)">
+  <h4>💀First Lie: <i class="red">Post-Newtonian corrections</i> (1/2)</h4>
   <div class="x40">
     \[
 
@@ -937,7 +1100,7 @@ Learn the forbidden topics
 
 \]
   </div>
-  <div class="columns c50-50">
+  <div class="columns c30-70">
   <div class="x20 fragment">
 \[
 \boxed{
@@ -1027,39 +1190,122 @@ v^2+3\frac{Gm}{r}
 </div>
 <div>
   <ul class="x70">
-    <li>1PN: relativistic correction, proportional to $1/c^{2}$</li>
-    <li>2PN: conservative relativistic correction, proportional to $1/c^{4}$</li>
-    <li>2.5PN: dissipative correction, proportional to $1/c^{5}$: orbital energy and angular momentum loss through gravitational-wave emission.</li>
-    <li>(3PN, 3.5PN, 4PN, 4.5PN, ...)</li>
+    <li><i class="python-yellow">1PN:</i> relativistic correction, proportional to $1/c^{2}$</li>
+    <li><i class="python-yellow">2PN:</i> conservative relativistic correction, proportional to $1/c^{4}$</li>
+    <li><i class="python-yellow">2.5PN:</i> dissipative correction, proportional to $1/c^{5}$: orbital energy and angular momentum loss through gravitational-wave emission.</li>
+    <li><i class="python-yellow">(3PN, 3.5PN, 4PN, 4.5PN, ...)</i></li>
   </ul>
 </div>
 </div>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-color="rgb(28,3,51)">
-  <h3>💀First Lie: <i class="red">Post-Newtonian corrections</i> (2/2)</h3>
-  <video style="width: 40%;" controls autoplay muted src="videos/mov_7em7_q2.mp4" />
+  <h4>💀First Lie: <i class="red">Post-Newtonian corrections</i> (2/2)</h4>
+  <div class="columns c50-50">
+    <div>
+      <pre style="font-size: 12%;"><code class="cpp" data-trim>
+
+    for (int k = 0; k < 3; k++)
+    {
+    // Precession (PN1)
+    pn1[k] = G * m2 * r2inv * (nv[k] * (-v1_2 - 2 * v2_2 + 4 * v1v2 + 1.5 * (nv2_2) + 5 * (G * m1 * rinv) + 4 * (G
+                                        * m2 * rinv)) + vv[k] * (4*nv1 - 3*nv2 ));
+    pn1[k] *= c2inv;
+
+    // Precession Correction (PN2)
+    pn2[k] = G * m2 * r2inv * (nv[k] * (-2 * v2_4 + 4 * v2_2 * v1v2 - 2 * v1v2_2 + 1.5 * v1_2 * nv2_2 + 4.5 * v2_2 * nv2_2 - 6 * v1v2 * nv2_2 - 1.875 *
+             nv2_4 + (G * m1 * rinv) * (-3.75 * v1_2 + 1.25 * v2_2 - 2.5 * v1v2 + 19.5 * nv1_2 - 39 * nv1 * nv2 + 8.5 * nv2_2) + G * m2 *
+             rinv * (4 * v2_2 - 8 * v1v2 + 2 * nv1_2 - 4 * nv1 * nv2 - 6 * nv2_2)) + vv[k] * (v1_2 * nv2 + 4 * v2_2 * nv1 - 5 * v2_2 * nv2 - 4 * v1v2 * nv1 +
+             4 * v1v2 * nv2 - 6 * nv1 * nv2_2 + 4.5 * nv2_3 + (G * m1 * rinv) * (-15.75 * nv1 + 13.75 * nv2) + G * m2 * rinv * (-2 * nv1 - 2 *
+             nv2))) + G3 * m2 * r4inv * nv[k] * (-14.25 * m1_2 - 9 * m2_2 - 34.5 * m1 * m2);
+    pn2[k] *= c4inv;
+
+    // GW Decay (PN2.5)
+    pn25[k] = 0.8 * G2 * m1 * m2 * r3inv * (vv[k] * (-(vv[k] * vv[k]) + 2 * G * m1 * rinv - 8 * G * m2 * rinv) + nv[k] * (nv1 - nv2) * (3 * vv[k] *
+              vv[k] - 6 * G * m1 * rinv + 52.0/3.0 * G * m2 * rinv));
+    pn25[k] *= c5inv;
+
+    // Derivative Precession (dPN1)
+    dpn1[k] = G * m2 * (-(vv[k] * v1_2 * r3inv + 2 * nv[k] * v1a1 * r2inv + 3 * nv[k] * v1_2 * (nv2 - nv1) * r3inv) -2 * (vv[k] * v2_2 * r3inv + 2 *
+              nv[k] * v2a2 * r2inv + 3 * nv[k] * v2_2 * (nv2 - nv1) * r3inv) + 4 * (vv[k] * v1v2 * r3inv + nv[k] * (a1v2 + a2v1) * r2inv + 3 * nv[k] *
+              v1v2 * (nv2 - nv1) * r3inv) + 1.5 * (vv[k] * nv2_2 * r3inv + 2 * nv[k] * nv2 * (r * na2 + v1v2 - v2_2) * r3inv) + 5 * nv[k] * (nv2_2 *
+              (nv2 - nv1)) * r3inv + G * (vv[k] * r4inv + 4 * nv[k] * (nv2 - nv1) * r4inv) * (5 * m1 + 4 * m2) + 4 * nv1 * r2inv * aa[k] + 3 * nv2 *
+              r2inv * zaa[k] + 4 * (v1_2 - v1v2 + r * na1 + 3 *(nv2 - nv1) * nv1) * r3inv * vv[k] + 3 * (v1v2 - v2_2 + r * na2 + 3 * (nv2 - nv1) * nv2) *
+              r3inv * zvv[k]);
+    dpn1[k] *= c2inv;
+
+    // Derivative Precession Correction (dPN2)
+    dpn2[k] = G * m2 * (-2 * (vv[k] * v2_4 * r3inv + nv[k] * (4 * v2_2 * a2v2) * r2inv + 3 * nv[k] * (v2_4 * (nv2 - nv1)) * r3inv) + 4 *(vv[k] * v2_2 *
+              v1v2 * r3inv + 2 * nv[k] * (v2a2 * v1v2) * r2inv + nv[k] * (v2_2 * (a1v2 + v1a2)) * r2inv * 3 * nv[k] * (v2_2 * v1v2 * (nv2 - nv1)) *
+              r3inv) - 2 * (vv[k] * v2v1_2 * r3inv + 2 * nv[k] * (v1v2 * (a1v2 + a2v1)) * r2inv + 3 * nv[k] * (v1v2_2 * (nv2 - nv1)) * r3inv) + 1.5 *
+              (vv[k] * (v1_2 * nv2_2) * r3inv + 2 * nv[k] * (v1a1 * nv2_2) * r2inv + 2 * nv[k] * (v1_2 * nv2) * r2inv * (na2 + (v1v2 - v2_2) * rinv) + 5 *
+              nv[k] * (v1_2 * nv2_2) * r3inv * (nv2 - nv1)) + 4.5 * (vv[k] * (v2_2 * nv2_2) * r3inv + 2 * nv[k] * (v2a2 * nv2_2) * r2inv + 2 * nv[k] *
+              (v2_2 * nv2) * r2inv * (na2 + (v1v2 - v2_2) * rinv) + 5 * nv[k] * (v2_2 * nv2_2) * r3inv * (nv2 - nv1)) -6 * (vv[k] * (v1v2 * nv2_2) *
+              r3inv + nv[k] * ((a1v2 + v1a2) * nv2_2) * r2inv + 2 * nv[k] * (v1v2 * nv2) * r2inv * (na2 + (v1v2 - v2_2) * rinv) + 5 * nv[k] * (v1v2 *
+              nv2_2 * (nv2 - nv1)) * r3inv) - 1.875 * (vv[k] * nv2_4 * r3inv + 4 * nv[k] * nv2_3 * r2inv * (na2 + (v1v2 - v2_2) * rinv) + 7 * nv[k] *
+              nv2_4 * r3inv * (nv2 - nv1)) + G * m1 * (-3.75 * (vv[k] * v1_2 * r4inv + 2 * nv[k] * v1a1 * r3inv + 4 * nv[k] * (v1_2 * (nv2 - nv1)) *
+              r4inv) + 1.25 * (vv[k] * v2_2 * r4inv + 2 * nv[k] * v2a2 * r3inv + 4 * nv[k] * v2_2 * (nv2 - nv1) *r4inv) - 2.5 * (vv[k] * v1v2 *
+              r4inv + nv[k] * (a1v2 + v1a2) * r3inv + 4 * nv[k] * v1v2 * (nv2 - nv1) * r4inv) + 19.5 * (vv[k] * nv1_2 * r4inv + 2 * nv[k] * nv1 *
+              r3inv * (na1 + (v1_2 - v1v2) * rinv) + 6 * nv[k] * (nv1_2 * (nv2 - nv1)) * r4inv) - 39.0 * (vv[k] * nv1 * nv2 * r4inv + nv[k] * r3inv *
+              (nv1 * na2 + nv2 * na1 + (nv1 * (v1v2 - v2_2) * rinv) + (nv2 * (v1_2 - v1v2) * rinv)) + 6 * nv[k] * nv1 * nv2 * r4inv * (nv2 - nv1)) +
+              8.5 * (vv[k] * nv2_2 * r4inv + 2 * nv[k] * nv2 * r3inv * (na2 + (v1v2 - v2_2) * rinv) + 6 * nv[k] * (nv2_2 * (nv2 - nv1)) * r4inv)) +
+              G * m2 * (4.0 * (vv[k] * v2_2 * r4inv + 2 * nv[k] * v2a2 * r3inv + 4 * nv[k] * (v2_2 * (nv2 - nv1)) * r4inv) - 8.0 * (vv[k] * v1v2 * r4inv +
+              nv[k] * (a1v2 + v1a2) * r3inv + 4 * nv[k] * (v1v2 * (nv2 - nv1)) * r4inv) + 2.0 * (vv[k] * nv1_2 * r4inv + 2 * nv[k] * nv1 * r3inv *
+              (na1 + (v1_2 * v1v2) * rinv) + 6 * nv[k] * (nv1_2 * (nv2 - nv1)) * r4inv) - 4.0 * (vv[k] * nv1 * nv2 * r4inv + nv[k] * r3inv * (nv1 *
+              na2 + nv2 * na1 + (nv1 * (v1v2 - v2_2)) * rinv + (nv2 * (v1_2 * v1v2)) * rinv) + 6 * nv[k] * nv1 * nv2 * r4inv * (nv2 - nv1)) - 6.0 *
+              (vv[k] * nv2_2 * r4inv + 2 * nv[k] * nv2 * r3inv * (na2 + (v1v2 - v2_2) * rinv) + 6 * nv[k] * (nv2_2 * (nv2 - nv1)) * r4inv)) + aa[k] *
+              v1_2 * nv2 * r2inv + vv[k] * (2 * v1a2 * nv2 * r2inv + v1_2 * r2inv * (na2 + (v1v2 - v2_2) * rinv + 3 * nv2 * rinv * (nv2 - nv1))) + 4.0 *
+              aa[k] * v2_2 * nv1 * r2inv + 4 * vv[k] * (2 * v2a2 * nv1 * r2inv + v2_2 * r2inv * (na1 + (v1_2 - v1v2) * rinv + 3 * nv1 * rinv * (nv2 -
+              nv1))) - 5.0 * aa[k] * v2_2 * nv2 * r2inv - 5 * vv[k] * (2 * v2a2 * nv2 * r2inv + v2_2 * r2inv * (na2 + (v1v2 - v2_2) * rinv + 3 * nv2 *
+              rinv * (nv2 - nv1))) - 4.0 * aa[k] * v1v2 * nv1 * r2inv - 4 * vv[k] * ((a1v2 + v1a2) * nv1 * r2inv + v1v2 * r2inv * (na1 + (v1_2 - v1v2) *
+              rinv + 3 * v1v2 * nv1 * rinv * (nv2 - nv1))) + 4.0 * aa[k] * v1v2 * nv2 * r2inv + 4 * vv[k] * ((a1v2 + v1a2) * nv2 * r2inv + v1v2 * r2inv *
+              (na2 + (v1v2 - v2_2) * rinv + 3 * v1v2 * nv2 * rinv * (nv2 - nv1))) - 6 * aa[k] * nv1 * nv2_2 * r2inv - 6 * vv[k] * (nv2_2 * r2inv * (na1 +
+              (v1_2 - v1v2) * rinv) + 2 * nv1 * nv2 * r2inv * (na2 + (v1v2 - v2_2) * rinv) + 5 * nv1 * nv2_2 * r3inv * (nv2 - nv1)) + 4.5 * aa[k] * nv2_3 *
+              r2inv + 4.5 * vv[k] * (3 * nv2_2 * r2inv * (na2 + (v1v2 - v2_2) * rinv) + 5 * r * nv2_3 * r3inv * (nv2 - nv1)) + G * ((aa[k] * nv1 *
+              r3inv * vv[k] * (na1 * r3inv + (v1_2 - v1v2) * r4inv + 4 * nv1 * r4inv *(nv2 - nv1))) * (-15.75 * m1 - 2 * m2) + (aa[k] * nv2 *
+              r3inv + vv[k] * (na2 * r3inv + (v1v2 - v2_2) * r4inv + 4 * nv2 * r4inv * (nv2 - nv1))) * (13.75 * m1 - 2 * m2))) + G3 * m2 *
+              (-14.25 * m1_2 - 9 * m2_2 - 34.5 * m1m2) * (vv[k] * r5inv + 5 * nv[k] * (nv2 - nv1) * r5inv);
+    dpn2[k] *= c4inv;
+
+    // Derivative GW Decay (dPN2.5)
+    dpn25[k] = 0.8 * G2 * m1m2 * (-(aa[k] * vv[k] * vv[k]) * r3inv - 2 * vv[k] * r3inv * (v1a1 + v2a2 - v2a1 - v1a2) + 6 * vv[k] * r4inv * vv[k] *
+               vv[k] * (nv1 - nv2) + G * (2 * m1 - 8 * m2) * (aa[k] * r4inv + 4 * vv[k] * r5inv * (nv2 - nv1)) + 3 * (nv[k] * vv[k] * vv[k] * r3inv *
+               (na1 - na2 + (v1_2 + v2_2 - 2 * v1v2) * rinv) + 2 * nv[k] * (nv1 - nv2) * r3inv * (v1a2 + v2a2 - v2a1 - v1a2) - 5 * nv[k] * (vv[k] *
+               vv[k] * (nv1 - nv2) * (nv1 - nv2)) * r4inv) + G * (52.0/3.0 * m2 - 6 * m1) * (vv[k] * (nv1-nv2) * r5inv + nv[k] * r4inv * (na1 - na2 +
+               (v1_2 - 2 * v1v2 + v2_2) * rinv) - 6 *nv[k] * (nv2 - nv1) * (nv2 - nv1) * r5inv));
+    dpn25[k] *= c5inv;
+    }
+  </code></pre>
+    </div>
+    <div>
+      <video style="width: 100%;" controls autoplay muted loop src="videos/mov_7em7_q2.mp4"></video>
+</div>
+  </div>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-color="rgb(28,3,51)">
-  <h3>💀Second Lie: The collapse is imminent but can be delayed</h3>
+  <h4>💀Second Lie: The collapse is imminent but can be delayed</h4>
   <ul>
-    <li>Hard binaries: release kinetic energy into the cluster</li>
-    <li>BH and NS: provide energy through dynamical interactions</li>
-    <li>IMBHs: alter the central density profile, maybe preventing it?</li>
+    <li><i class="python-yellow">Hard binaries:</i> release kinetic energy into the cluster</li>
+    <li><i class="python-yellow">BH and NS:</i> provide energy through dynamical interactions</li>
+    <li><i class="python-yellow">IMBHs:</i> alter the central density profile, maybe preventing it?</li>
     <li>External tidal effects</li>
   </ul>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-color="rgb(28,3,51)">
   <h3>💀Third Lie: </h3>
-  C++ runs the world, and a lot of Python projects are amazing thanks to C++
+  <div class="columns c30-70 v-center">
+    <img src="img/cpp_logo.svg" />
+    <p>C++ runs the world, and a lot of Python projects are amazing thanks to C++</p>
+  </div>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-color="rgb(28,3,51)">
   <h3>💀Final Lie: </h3>
-  <h4 class="fragment">The <u>small contribution</u> of stars <i class="qt-lemon">still affects</i> the Cluster evolution</h4>
-  <h4 class="fragment">The Cluster evolution <i class="qt-lemon">will affect</i> the Galaxy evolution</h4>
+  <h4 class="fragment">The <u>small contribution</u> of stars<br><i class="python-yellow">affects</i> the Cluster evolution</h4>
+  <br>
+  <h4 class="fragment">The Cluster dynamics<br><i class="python-yellow">will affect</i> the Galaxy evolution</h4>
 </section>
 
 <section data-no-header class="full-slide" data-transition="fade-in fade-out" data-background-image="img/gaia.jpg">
@@ -1071,12 +1317,18 @@ v^2+3\frac{Gm}{r}
   <p class="at-bottom x20">Attribution: ESA/Gaia/DPAC, S. Payne-Wardenaar, L. McCallum et al (2025), CC BY-SA IGO 3.0</p>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_backcover.svg">
+<section data-no-header data-transition="fade-in fade-out">
+  <h2>Thanks for <i class="python-yellow">being a star</i></h2>
+  <h2>in the <i class="python-blue">Python</i> Ecosystem</h2>
+  <img class="w20" src="img/python-logo-only.svg" />
+</section>
+
+<section data-no-header data-transition="fade-in fade-out" data-background-image="img/background_backcover.svg">
   <div class="columns c70-30">
     <div>
     <h4>On Astrophysics, Communities and Python</h4>
     <p class="x80">
-    <i class="qt-lemon">Cristián</i> Maureira-Fredes<br>
+    <i class="python-yellow">Cristián</i> Maureira-Fredes<br>
     maureira.dev
     <hr class="yellow-line"/>
     <span>@cmaureir</span><br/>
