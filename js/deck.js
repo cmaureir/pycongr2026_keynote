@@ -31,8 +31,26 @@ function slideWidth() {
   return Math.max( MIN_WIDTH, Math.min( MAX_WIDTH, width ) );
 }
 
+// Use the vendored KaTeX (vendor/katex, works offline) when it is present,
+// otherwise fall back to the jsdelivr CDN the plugin uses by default. vendor/ is
+// git-ignored to keep its ~3 MB out of the repo, so a fresh clone and the
+// GitHub Pages build (both without vendor/, both online) get the CDN, while a
+// local checkout that has run the vendoring step renders math with no internet.
+// Probe is a HEAD request resolved before init so the plugin reads a final path.
+var LOCAL_KATEX = 'vendor/katex';
+
+function katexConfig() {
+  return fetch( LOCAL_KATEX + '/dist/katex.min.js', { method: 'HEAD' } )
+    .then( function( r ) { return r.ok ? { local: LOCAL_KATEX } : {}; } )
+    .catch( function() { return {}; } );
+}
+
+katexConfig().then( function( katex ) {
 Reveal.initialize({
   hash: true,
+
+  // Local vs CDN KaTeX, decided by the probe above.
+  katex: katex,
 
   // Reveal lays every slide out in this fixed logical box, then scales the
   // whole thing to fit the window. A box whose aspect ratio differs from the
@@ -63,6 +81,7 @@ Reveal.initialize({
 
   // https://revealjs.com/plugins/
   plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+});
 });
 
 // Reveal re-scales on resize but never changes the box itself, so follow the

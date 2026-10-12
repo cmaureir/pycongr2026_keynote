@@ -1,2 +1,7 @@
 code/data*
 videos/*full.*
+
+# Vendored KaTeX for offline math rendering (~3 MB). Kept local only; deck.js
+# falls back to the jsdelivr CDN when this is absent (e.g. on GitHub Pages).
+# Recreate with: download the KaTeX release zip and unpack into vendor/katex/dist/
+vendor/
